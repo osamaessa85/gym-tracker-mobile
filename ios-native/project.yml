@@ -1,0 +1,21 @@
+name: GymTrackerApp
+options:
+  bundleIdPrefix: com.osamaessa
+  deploymentTarget:
+    iOS: '16.0'
+targets:
+  GymTrackerApp:
+    type: application
+    platform: iOS
+    deploymentTarget: '16.0'
+    sources: [GymTrackerApp]
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: com.osamaessa.gymtracker
+      PRODUCT_NAME: Gym Tracker
+      INFOPLIST_KEY_CFBundleDisplayName: Gym Tracker
+      INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents: YES
+      INFOPLIST_KEY_UIStatusBarStyle: UIStatusBarStyleLightContent
+      TARGETED_DEVICE_FAMILY: '1,2'
+    info:
+      UILaunchScreen: {}
+      UIRequiresFullScreen: false
