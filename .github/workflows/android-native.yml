@@ -3,6 +3,8 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
+permissions:
+  contents: write
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -19,3 +21,12 @@ jobs:
         with:
           name: gym-tracker-android-debug
           path: android-native/app/build/outputs/apk/debug/app-debug.apk
+      - name: Commit APK into repo (artifact download is blocked in the requester's sandbox network)
+        run: |
+          mkdir -p dist
+          cp android-native/app/build/outputs/apk/debug/app-debug.apk dist/gym-tracker.apk
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add dist/gym-tracker.apk
+          git diff --cached --quiet && echo "no changes" || git commit -m "Add built APK [skip ci]"
+          git push
