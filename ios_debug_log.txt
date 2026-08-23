@@ -1,0 +1,13 @@
+Parsing project spec failed: Decoding failed at "path": Nothing found
+Command line invocation:
+    /Applications/Xcode_15.4.app/Contents/Developer/usr/bin/xcodebuild -project GymTrackerApp.xcodeproj -scheme GymTrackerApp -sdk iphoneos -configuration Release CODE_SIGNING_ALLOWED=NO build
+
+User defaults from command line:
+    IDEPackageSupportUseBuiltinSCM = YES
+
+Build settings from command line:
+    CODE_SIGNING_ALLOWED = NO
+    SDKROOT = iphoneos17.5
+
+2026-08-23 05:52:09.331 xcodebuild[2656:11103] Writing error result bundle to /var/folders/g3/pffjr_y96bq06blnkf72x_hw0000gn/T/ResultBundle_2026-23-08_05-52-0009.xcresult
+xcodebuild: error: 'GymTrackerApp.xcodeproj' does not exist.
